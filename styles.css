@@ -1,0 +1,560 @@
+
+/* ─── Reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Variables ──────────────────────────────────────── */
+:root {
+  --brown-deep:   #3b1f0f;
+  --brown-mid:    #6b3a22;
+  --brown-warm:   #9c5a32;
+  --brown-light:  #c8845a;
+  --beige-dark:   #d4b89a;
+  --beige-mid:    #e8d5bf;
+  --beige-light:  #f4ebe0;
+  --beige-pale:   #faf6f0;
+  --white:        #fffefb;
+  --muted:        #a08060;
+  --border:       #ddc9b0;
+  --border-hover: #c8a882;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--beige-pale);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+/* ─── Page heading nav ───────────────────────────────── */
+.page-nav {
+  display: flex;
+  gap: 0;
+  margin: 2.8rem 0 0;
+  border-bottom: 1.5px solid var(--border);
+  width: 100%;
+  max-width: 560px;
+  padding: 0 1.5rem;
+}
+
+.nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 12px 0 14px;
+  margin-right: 2rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1.5px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.nav-link:hover {
+  color: var(--brown-deep);
+}
+
+.nav-link.active {
+  color: var(--brown-deep);
+  border-bottom-color: var(--brown-warm);
+}
+
+/* ─── Wrapper ────────────────────────────────────────── */
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+  padding: 2.5rem 1.5rem 0;
+}
+
+/* ─── Split card ─────────────────────────────────────── */
+.split {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  min-height: 560px;
+}
+
+/* ─── Sidebar ────────────────────────────────────────── */
+.sidebar {
+  background: var(--brown-deep);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-top {}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.6rem;
+}
+
+.logo-mark svg {
+  width: 36px;
+  height: 36px;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: var(--beige-light);
+  text-transform: uppercase;
+  display: block;
+  line-height: 1;
+}
+
+.brand-arabic {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--beige-dark);
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 6px;
+}
+
+.sidebar-rule {
+  width: 32px;
+  height: 1px;
+  background: var(--brown-warm);
+  margin: 1.4rem 0;
+}
+
+.sidebar-desc {
+  font-size: 12px;
+  color: var(--beige-dark);
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2rem;
+}
+
+.sidebar-link {
+  font-size: 11px;
+  color: var(--beige-dark);
+  letter-spacing: 1px;
+  opacity: 0.5;
+  padding: 5px 0 5px 10px;
+  border-left: 2px solid transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  opacity: 1;
+  border-left-color: var(--brown-light);
+  color: var(--beige-light);
+}
+
+.sidebar-bottom {
+  font-size: 10px;
+  color: var(--brown-mid);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ─── Feature pills (signup sidebar) ────────────────── */
+.pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 1.8rem;
+}
+
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 10px;
+  color: var(--beige-mid);
+  letter-spacing: 0.5px;
+}
+
+.pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brown-light);
+  flex-shrink: 0;
+}
+
+/* ─── Form body ──────────────────────────────────────── */
+.form-body {
+  padding: 2.5rem 2.5rem;
+}
+
+.form-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--brown-deep);
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.form-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.8rem 0 1.5rem;
+}
+
+/* ─── Section label ──────────────────────────────────── */
+.section-label {
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1.6rem 0 1.2rem;
+  font-weight: 500;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── Grid rows ──────────────────────────────────────── */
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ─── Fields ─────────────────────────────────────────── */
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.field input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--brown-deep);
+  background: var(--beige-pale);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.field input::placeholder {
+  color: var(--beige-dark);
+  font-weight: 300;
+}
+
+.field input:focus {
+  border-color: var(--brown-warm);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(156, 90, 50, 0.1);
+}
+
+/* ─── Password wrapper ───────────────────────────────── */
+.pw-wrap {
+  position: relative;
+}
+
+.pw-wrap input {
+  padding-right: 44px;
+}
+
+
+
+/* ─── Strength bar ───────────────────────────────────── */
+
+
+/* ─── Buttons ────────────────────────────────────────── */
+.btn-primary {
+  width: 100%;
+  height: 46px;
+  border: none;
+  background: var(--brown-mid);
+  color: var(--beige-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: 1.2rem;
+  transition: background 0.25s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--brown-deep);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-secondary {
+  height: 46px;
+  border: 1px solid var(--border);
+  background: var(--beige-light);
+  color: var(--brown-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: 1.2rem;
+  padding: 0 20px;
+  transition: background 0.25s, border-color 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--beige-mid);
+  border-color: var(--border-hover);
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-row .btn-primary {
+  flex: 1;
+}
+
+/* ─── Or divider ─────────────────────────────────────── */
+.or-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.4rem 0;
+}
+
+.or-line::before,
+.or-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.or-line span {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ─── Social button ──────────────────────────────────── */
+.btn-social {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-social:hover {
+  border-color: var(--border-hover);
+  color: var(--brown-deep);
+}
+
+/* ─── Forgot link ────────────────────────────────────── */
+.forgot-link {
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  display: block;
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--brown-warm);
+}
+
+/* ─── Alt link row ───────────────────────────────────── */
+.alt-link {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.alt-link a {
+  color: var(--brown-warm);
+  text-decoration: none;
+  border-bottom: 1px solid var(--beige-dark);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.alt-link a:hover {
+  color: var(--brown-deep);
+  border-color: var(--brown-mid);
+}
+
+/* ─── Step progress (signup) ─────────────────────────── */
+.step-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--beige-mid);
+}
+
+.step-dot.active {
+  background: var(--brown-warm);
+  width: 20px;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  height: 2px;
+  background: var(--beige-mid);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--brown-warm);
+  border-radius: 2px;
+}
+
+.progress-fill.step-1 { width: 33%; }
+.progress-fill.step-2 { width: 66%; }
+.progress-fill.step-3 { width: 100%; }
+
+/* ─── Checkbox row ───────────────────────────────────── */
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.check-row input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  accent-color: var(--brown-warm);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.check-row span {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.check-row a {
+  color: var(--brown-warm);
+  text-decoration: none;
+  border-bottom: 1px solid var(--beige-dark);
+}
+
+.check-row a:hover {
+  color: var(--brown-deep);
+}
+
+.alt-link a {
+    color: var(--brown-warm);
+    text-decoration: none;
+    border-bottom: 1px solid var(--beige-dark);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+}
